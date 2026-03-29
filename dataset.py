@@ -67,6 +67,9 @@ SAMPLE_POSTS = [
     "so tired of everything rn but at least the coffee is good ☕",
     "my dog ran away but we found her 💀 my heart cannot take this",
     "vibes are immaculate today no complaints fr fr 🔥",
+    "I am absolutely not stressed about this presentation at all 🙂",
+    "honestly today was just okay nothing special",
+    "passed my exam!!! so happy and relieved 😭✨",
 ]
 
 # Human labels for each post above.
@@ -91,6 +94,9 @@ TRUE_LABELS = [
     "mixed",     # tired (negative) + coffee (small positive)
     "mixed",     # scary dog situation but resolved happily
     "positive",  # "immaculate vibes", no complaints
+    "negative",  # sarcasm + negation: clearly stressed despite denial
+    "neutral",   # flat report, no emotional signal
+    "positive",  # passed exam + happy + relieved
 ]
 
 # TODO: Add 5-10 more posts and labels.
