@@ -1,4 +1,6 @@
 # mood_analyzer.py
+import re
+import string
 """
 Rule based mood analyzer for short text snippets.
 
@@ -40,21 +42,25 @@ class MoodAnalyzer:
         """
         Convert raw text into a list of tokens the model can work with.
 
-        TODO: Improve this method.
-
-        Right now, it does the minimum:
-          - Strips leading and trailing whitespace
-          - Converts everything to lowercase
-          - Splits on spaces
-
-        Ideas to improve:
-          - Remove punctuation
-          - Handle simple emojis separately (":)", ":-(", "🥲", "😂")
-          - Normalize repeated characters ("soooo" -> "soo")
+        Improvements over the starter:
+          - Lowercases and strips whitespace
+          - Separates emoji characters into their own tokens so they can
+            be matched or weighted independently
+          - Strips ASCII punctuation so "love!!!!" matches "love" in the
+            word list
         """
         cleaned = text.strip().lower()
+
+        # Separate emoji into their own tokens by inserting spaces around them.
+        # This covers most common emoji in the U+1F000-U+1FFFF range.
+        cleaned = re.sub(r'([\U0001F000-\U0001FFFF])', r' \1 ', cleaned)
+
+        # Strip ASCII punctuation (!, ., ?, commas, etc.) but keep emojis.
+        cleaned = cleaned.translate(str.maketrans('', '', string.punctuation))
+
         tokens = cleaned.split()
 
+        print(f"[DEBUG] tokens: {tokens}")
         return tokens
 
     # ---------------------------------------------------------------------
