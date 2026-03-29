@@ -129,11 +129,20 @@ class MoodAnalyzer:
         you use in TRUE_LABELS in dataset.py if you care about accuracy.
         """
         score = self.score_text(text)
+
         if score > 0:
             return "positive"
         elif score < 0:
             return "negative"
         else:
+            # Score == 0: could mean no sentiment words (neutral) OR
+            # balanced positive/negative signals that cancel out (mixed).
+            # Peek at the tokens to tell them apart.
+            tokens = self.preprocess(text)
+            has_positive = any(t in self.positive_words for t in tokens)
+            has_negative = any(t in self.negative_words for t in tokens)
+            if has_positive and has_negative:
+                return "mixed"
             return "neutral"
 
     # ---------------------------------------------------------------------
