@@ -83,11 +83,29 @@ class MoodAnalyzer:
         """
         tokens = self.preprocess(text)
         score = 0
+
+        # Negation words that flip the sentiment of the next word.
+        negation_words = {
+            "not", "never", "no", "don't", "doesn't",
+            "didn't", "isn't", "wasn't", "can't", "won't",
+        }
+
+        negate = False
         for token in tokens:
+            if token in negation_words:
+                negate = True
+                continue
+
+            modifier = -1 if negate else 1
+
             if token in self.positive_words:
-                score += 1
+                score += modifier        # "not happy" → -1
             elif token in self.negative_words:
-                score -= 1
+                score -= modifier        # "not bad"   → +1
+
+            # Reset negation after the first word that follows it.
+            negate = False
+
         return score
 
     # ---------------------------------------------------------------------
