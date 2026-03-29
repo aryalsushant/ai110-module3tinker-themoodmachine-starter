@@ -69,7 +69,11 @@ SAMPLE_POSTS = [
     "vibes are immaculate today no complaints fr fr 🔥",
     "I am absolutely not stressed about this presentation at all 🙂",
     "honestly today was just okay nothing special",
-    "passed my exam!!! so happy and relieved 😭✨",
+    # --- Sensitivity test posts ---
+    "amazing how I can study all night and still fail",
+    "love when my coffee is cold and my alarm is early",
+    "I genuinely had the worst week of my life",
+    "finally got some rest and I feel incredible",
 ]
 
 # Human labels for each post above.
@@ -96,7 +100,11 @@ TRUE_LABELS = [
     "positive",  # "immaculate vibes", no complaints
     "negative",  # sarcasm + negation: clearly stressed despite denial
     "neutral",   # flat report, no emotional signal
-    "positive",  # passed exam + happy + relieved
+    # --- Sensitivity test labels ---
+    "negative",  # sarcasm: studying all night and failing is bad
+    "negative",  # sarcasm: cold coffee + early alarm is bad
+    "negative",  # direct: worst week
+    "positive",  # direct: rested and feeling incredible
 ]
 
 # TODO: Add 5-10 more posts and labels.
