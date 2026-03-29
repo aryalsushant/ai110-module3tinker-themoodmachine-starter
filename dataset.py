@@ -23,6 +23,12 @@ POSITIVE_WORDS = [
     "chill",
     "relaxed",
     "amazing",
+    # Added: words that appear in SAMPLE_POSTS but were unrecognized
+    "proud",       # "kinda proud of myself"
+    "hopeful",     # "kind of hopeful"
+    "best",        # "simultaneously the best and worst day"
+    "vibes",       # "vibes are immaculate"
+    "immaculate",  # "vibes are immaculate"
 ]
 
 NEGATIVE_WORDS = [
@@ -36,6 +42,8 @@ NEGATIVE_WORDS = [
     "stressed",
     "hate",
     "boring",
+    # Added: words that appear in SAMPLE_POSTS but were unrecognized
+    "worst",       # "simultaneously the best and worst day"
 ]
 
 # ---------------------------------------------------------------------
