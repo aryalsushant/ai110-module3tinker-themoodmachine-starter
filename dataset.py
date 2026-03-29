@@ -50,6 +50,15 @@ SAMPLE_POSTS = [
     "This is fine",
     "So excited for the weekend",
     "I am not happy about this",
+    # --- New posts ---
+    "Lowkey stressed but no cap kinda proud of myself 😅",
+    "I absolutely love sitting in traffic for two hours 🙃",
+    "just got the job offer!!!! I'm literally crying happy tears 😭🎉",
+    "meh. another monday. whatever",
+    "this is simultaneously the best and worst day of my life lol",
+    "so tired of everything rn but at least the coffee is good ☕",
+    "my dog ran away but we found her 💀 my heart cannot take this",
+    "vibes are immaculate today no complaints fr fr 🔥",
 ]
 
 # Human labels for each post above.
@@ -65,6 +74,15 @@ TRUE_LABELS = [
     "neutral",   # "This is fine"
     "positive",  # "So excited for the weekend"
     "negative",  # "I am not happy about this"
+    # --- New labels ---
+    "mixed",     # stressed but proud — classic mixed
+    "negative",  # sarcasm: traffic is clearly bad
+    "positive",  # job offer + happy crying
+    "neutral",   # flat "meh" vibe, no strong signal
+    "mixed",     # explicitly best AND worst
+    "mixed",     # tired (negative) + coffee (small positive)
+    "mixed",     # scary dog situation but resolved happily
+    "positive",  # "immaculate vibes", no complaints
 ]
 
 # TODO: Add 5-10 more posts and labels.
